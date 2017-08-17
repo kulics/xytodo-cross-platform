@@ -1,0 +1,7 @@
+.vs/
+packages/
+XyTodo/XyTodo.Android/bin/
+XyTodo/XyTodo.Android/obj/
+XyTodo/XyTodo.iOS/obj/
+XyTodo/XyTodo.UWP/bin/
+XyTodo/XyTodo.UWP/obj/
