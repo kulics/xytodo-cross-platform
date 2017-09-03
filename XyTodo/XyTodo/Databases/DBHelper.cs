@@ -13,23 +13,23 @@ namespace XyTodo.Databases
         public const int DATABASE_VERSION = 1;
 
         //构造函数，在这里检查数据库情况并检查
-        public DBHelper(string dbPath)
+        public DBHelper( string dbPath )
         {
-            connection = new SQLiteAsyncConnection(dbPath);
+            connection = new SQLiteAsyncConnection( dbPath );
 
             var value = DATABASE_VERSION;
             //判断是否存在
-            if (App.UserPreferences.GetInt("db_version") != 0)
+            if ( App.UserPreferences.GetInt( "db_version" ) != 0 )
             {
                 //有则读取
-                value = App.UserPreferences.GetInt("db_version");
-                OnUpgrade(value, DATABASE_VERSION);
+                value = App.UserPreferences.GetInt( "db_version" );
+                OnUpgrade( value, DATABASE_VERSION );
             }
             else
             {
                 //没有则创建
                 OnCreate();
-                App.UserPreferences.PutInt("db_version", DATABASE_VERSION);
+                App.UserPreferences.PutInt( "db_version", DATABASE_VERSION );
             }
         }
         //获取单个链接并返回
@@ -50,8 +50,21 @@ namespace XyTodo.Databases
             connection.CreateTableAsync<ModelTaskSub>().Wait();
         }
         //更新数据库
-        private void OnUpgrade(int oldVersion, int newVersion)
+        private void OnUpgrade( int oldVersion, int newVersion )
         {
+            var upgradeVersion = oldVersion;
+            //依次迭代版本
+            //if ( 1 == upgradeVersion )
+            //{
+            //    //添加表
+            //    //执行语句
+            //    var result = connection.ExecuteAsync( "CREATE TABLE IF NOT EXISTS safe ( safe_id INTEGER PRIMARY KEY, question TEXT, result TEXT );" );
+            //    upgradeVersion = 2;
+            //}
+            if ( upgradeVersion != newVersion )
+            {
+            }
+            App.UserPreferences.PutInt( "db_version", upgradeVersion );
         }
     }
 }

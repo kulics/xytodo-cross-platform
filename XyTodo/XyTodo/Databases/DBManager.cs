@@ -10,10 +10,9 @@ namespace XyTodo.Databases
         //数据库帮助
         public DBHelper helper;
         //构造方法
-        public DBManager(string dbPath)
+        public DBManager( string dbPath )
         {
-            //var dt = new SQLiteConnection("");
-            helper = new DBHelper(dbPath);
+            helper = new DBHelper( dbPath );
         }
 
         public Task<List<ModelTask>> GetItemsAsync()
@@ -23,29 +22,29 @@ namespace XyTodo.Databases
 
         public Task<List<ModelTask>> GetItemsNotDoneAsync()
         {
-            return helper.GetConnection().QueryAsync<ModelTask>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+            return helper.GetConnection().QueryAsync<ModelTask>( "SELECT * FROM [TodoItem] WHERE [Done] = 0" );
         }
 
-        public Task<ModelTask> GetItemAsync(int id)
+        public Task<ModelTask> GetItemAsync( int id )
         {
-            return helper.GetConnection().Table<ModelTask>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            return helper.GetConnection().Table<ModelTask>().Where( i => i.ID == id ).FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveItemAsync(ModelTask item)
+        public Task<int> SaveItemAsync( ModelTask item )
         {
-            if (item.ID != 0)
+            if ( item.ID != 0 )
             {
-                return helper.GetConnection().UpdateAsync(item);
+                return helper.GetConnection().UpdateAsync( item );
             }
             else
             {
-                return helper.GetConnection().InsertAsync(item);
+                return helper.GetConnection().InsertAsync( item );
             }
         }
 
-        public Task<int> DeleteItemAsync(ModelTask item)
+        public Task<int> DeleteItemAsync( ModelTask item )
         {
-            return helper.GetConnection().DeleteAsync(item);
+            return helper.GetConnection().DeleteAsync( item );
         }
     }
 }

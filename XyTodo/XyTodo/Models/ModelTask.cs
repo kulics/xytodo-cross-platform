@@ -42,7 +42,7 @@ namespace XyTodo.Models
             Content = "";
             Note = "";
             Color = "";
-            Sub = new ModelTaskSub[]{ };
+            Sub = new ModelTaskSub[] { };
         }
     }
 }

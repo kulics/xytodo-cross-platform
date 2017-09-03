@@ -3,7 +3,7 @@ using Xamarin.Forms;
 using XyTodo.Helpers;
 using XyTodo.iOS.Helpers;
 
-[assembly: Dependency(typeof(HelperUserPreferences))]
+[assembly: Dependency( typeof( HelperUserPreferences ) )]
 namespace XyTodo.iOS.Helpers
 {
     class HelperUserPreferences : IHelperUserPreferences
@@ -13,28 +13,28 @@ namespace XyTodo.iOS.Helpers
             throw new System.NotImplementedException();
         }
 
-        public string GetString(string key)
+        public string GetString( string key )
         {
             var rst = "";
-            rst = NSUserDefaults.StandardUserDefaults.StringForKey(key);
+            rst = NSUserDefaults.StandardUserDefaults.StringForKey( key );
             return rst;
         }
 
-        public void PutString(string key, string value)
+        public void PutString( string key, string value )
         {
-            NSUserDefaults.StandardUserDefaults.SetString(value, key);
+            NSUserDefaults.StandardUserDefaults.SetString( value, key );
         }
 
-        public int GetInt(string key)
+        public int GetInt( string key )
         {
             var rst = 0;
-            rst = (int)NSUserDefaults.StandardUserDefaults.IntForKey(key);
+            rst = (int) NSUserDefaults.StandardUserDefaults.IntForKey( key );
             return rst;
         }
 
-        public void PutInt(string key, int value)
+        public void PutInt( string key, int value )
         {
-            NSUserDefaults.StandardUserDefaults.SetInt(value, key);
+            NSUserDefaults.StandardUserDefaults.SetInt( value, key );
         }
     }
 }

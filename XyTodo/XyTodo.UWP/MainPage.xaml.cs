@@ -5,7 +5,7 @@
         public MainPage()
         {
             this.InitializeComponent();
-            LoadApplication(new XyTodo.App());
+            LoadApplication( new XyTodo.App() );
         }
     }
 }

@@ -1,4 +1,4 @@
 ﻿namespace XyTodo.Models
 {
-    public class ModelBase{}
+    public class ModelBase { }
 }

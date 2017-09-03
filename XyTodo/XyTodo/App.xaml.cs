@@ -5,7 +5,7 @@ using Xamarin.Forms.Xaml;
 using XyTodo.Databases;
 using XyTodo.Helpers;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+[assembly: XamlCompilation( XamlCompilationOptions.Compile )]
 namespace XyTodo
 {
     public partial class App : Application
@@ -32,18 +32,19 @@ namespace XyTodo
         {
             get
             {
-                if (database == null)
+                if ( database == null )
                 {
-                    database = new DBManager(DependencyService.Get<IHelperFile>().GetLocalFilePath(DBHelper.DATABASE_NAME));
+                    database = new DBManager( DependencyService.Get<IHelperFile>().GetLocalFilePath( DBHelper.DATABASE_NAME ) );
                 }
                 return database;
             }
         }
 
-        public static IHelperUserPreferences UserPreferences {
+        public static IHelperUserPreferences UserPreferences
+        {
             get
             {
-                if (userPreferences == null)
+                if ( userPreferences == null )
                 {
                     userPreferences = DependencyService.Get<IHelperUserPreferences>();
                 }

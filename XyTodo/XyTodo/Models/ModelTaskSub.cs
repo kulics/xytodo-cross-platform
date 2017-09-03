@@ -14,7 +14,7 @@ namespace XyTodo.Models
         //属性
         [PrimaryKey, AutoIncrement, Column( COL_ID )]
         public int ID { get; set; }//主键
-        [Column ( COL_ID_TASK )]
+        [Column( COL_ID_TASK )]
         public int IDTask { get; set; }//索引键
         [Column( COL_CONTENT )]
         public string Content { get; set; }//内容

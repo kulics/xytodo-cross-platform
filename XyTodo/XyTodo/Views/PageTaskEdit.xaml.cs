@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace XyTodo.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation( XamlCompilationOptions.Compile )]
     public partial class PageTaskEdit : ContentPage
     {
         public ObservableCollection<string> Items { get; set; }
@@ -32,15 +28,15 @@ namespace XyTodo.Views
             BindingContext = this;
         }
 
-        async void Handle_ItemTapped(object sender, SelectedItemChangedEventArgs e)
+        async void Handle_ItemTapped( object sender, SelectedItemChangedEventArgs e )
         {
-            if (e.SelectedItem == null)
+            if ( e.SelectedItem == null )
                 return;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            await DisplayAlert( "Item Tapped", "An item was tapped.", "OK" );
 
             //Deselect Item
-            ((ListView)sender).SelectedItem = null;
+            ( (ListView) sender ).SelectedItem = null;
         }
     }
 }
