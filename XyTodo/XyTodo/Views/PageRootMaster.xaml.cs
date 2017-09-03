@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XyTodo.Localization;
 
 namespace XyTodo.Views
 {
@@ -28,7 +29,7 @@ namespace XyTodo.Views
             {
                 MenuItems = new ObservableCollection<PageRootMenuItem>( new[]
                 {
-                    new PageRootMenuItem { Id = 0, Title = "Home", TargetType = typeof(PageTaskList) },
+                    new PageRootMenuItem { Id = 0, Title = AppResources.home, TargetType = typeof(PageTaskList) },
                     new PageRootMenuItem { Id = 1, Title = "About", TargetType = typeof(PageAbout) },
                     new PageRootMenuItem { Id = 2, Title = "Guide", TargetType = typeof(PageGuide) },
                     new PageRootMenuItem { Id = 3, Title = "Contact Us", TargetType = typeof(PageContactUs) },

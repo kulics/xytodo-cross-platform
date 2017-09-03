@@ -19,9 +19,9 @@ namespace XyTodo.Views
             //获取数据库数据
             var arr = App.Database.GetItemsAsync();
             //装载到UI
-            foreach ( var model in arr.Result )
+            foreach (var model in arr.Result)
             {
-                Items.Add( new ViewModelTask() { ID = model.ID, Content = model.Content } );
+                Items.Add(new ViewModelTask() { ID = model.ID, Content = model.Content });
             }
             //绑定内容
             BindingContext = this;

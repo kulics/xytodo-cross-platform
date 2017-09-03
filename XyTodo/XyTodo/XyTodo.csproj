@@ -42,6 +42,26 @@
     <Compile Include="Databases\DBManager.cs" />
     <Compile Include="Helpers\IHelperFile.cs" />
     <Compile Include="Helpers\IHelperUserPreferences.cs" />
+    <Compile Include="Localization\AppResources.ja-JP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.ja-JP.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\AppResources.ru-RU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.ru-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\AppResources.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\AppResources.zh-TW.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.zh-TW.resx</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Models\ModelTask.cs" />
     <Compile Include="Models\ModelTaskSub.cs" />
@@ -73,8 +93,10 @@
     <Compile Include="Views\PageTaskList.xaml.cs">
       <DependentUpon>PageTaskList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppResources.Designer.cs">
+    <Compile Include="Localization\AppResources.Designer.cs">
       <DependentUpon>AppResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -82,12 +104,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+    <EmbeddedResource Include="Localization\AppResources.ja-JP.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.ja-JP.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Localization\AppResources.ru-RU.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.ru-RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\AppResources.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\AppResources.zh-TW.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.zh-TW.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\PageRoot.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
