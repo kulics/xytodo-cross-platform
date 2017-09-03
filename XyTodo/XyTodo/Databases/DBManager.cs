@@ -1,51 +1,51 @@
-﻿using SQLite;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using XyTodo.Models;
 
 namespace XyTodo.Databases
 {
+    //数据库操作方法
     public class DBManager
     {
-        readonly SQLiteAsyncConnection database;
-
+        //数据库帮助
+        public DBHelper helper;
+        //构造方法
         public DBManager(string dbPath)
         {
-            database = new SQLiteAsyncConnection(dbPath);
-            database.CreateTableAsync<ModelTask>().Wait();
+            //var dt = new SQLiteConnection("");
+            helper = new DBHelper(dbPath);
         }
 
         public Task<List<ModelTask>> GetItemsAsync()
         {
-            return database.Table<ModelTask>().ToListAsync();
+            return helper.GetConnection().Table<ModelTask>().ToListAsync();
         }
 
         public Task<List<ModelTask>> GetItemsNotDoneAsync()
         {
-            return database.QueryAsync<ModelTask>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+            return helper.GetConnection().QueryAsync<ModelTask>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
         }
 
         public Task<ModelTask> GetItemAsync(int id)
         {
-            return database.Table<ModelTask>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            return helper.GetConnection().Table<ModelTask>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
 
         public Task<int> SaveItemAsync(ModelTask item)
         {
             if (item.ID != 0)
             {
-                return database.UpdateAsync(item);
+                return helper.GetConnection().UpdateAsync(item);
             }
             else
             {
-                return database.InsertAsync(item);
+                return helper.GetConnection().InsertAsync(item);
             }
         }
 
         public Task<int> DeleteItemAsync(ModelTask item)
         {
-            return database.DeleteAsync(item);
+            return helper.GetConnection().DeleteAsync(item);
         }
     }
 }

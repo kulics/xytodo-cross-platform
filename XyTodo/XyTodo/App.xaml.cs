@@ -12,6 +12,9 @@ namespace XyTodo
     {
         //数据库
         static DBManager database;
+        //用户设置
+        static IHelperUserPreferences userPreferences;
+
 
         public App()
         {
@@ -31,9 +34,20 @@ namespace XyTodo
             {
                 if (database == null)
                 {
-                    database = new DBManager(DependencyService.Get<IFileHelper>().GetLocalFilePath("SQLite.db3"));
+                    database = new DBManager(DependencyService.Get<IHelperFile>().GetLocalFilePath("SQLite.db3"));
                 }
                 return database;
+            }
+        }
+
+        public static IHelperUserPreferences UserPreferences {
+            get
+            {
+                if (userPreferences == null)
+                {
+                    userPreferences = DependencyService.Get<IHelperUserPreferences>();
+                }
+                return userPreferences;
             }
         }
 

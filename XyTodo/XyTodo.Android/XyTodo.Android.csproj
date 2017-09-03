@@ -106,7 +106,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\HelperFile.cs" />
+    <Compile Include="Helpers\HelperUserPreferences.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

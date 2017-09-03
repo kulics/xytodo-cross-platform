@@ -4,10 +4,10 @@ using Xamarin.Forms;
 using XyTodo.Helpers;
 using XyTodo.UWP.Helpers;
 
-[assembly: Dependency(typeof(FileHelper))]
+[assembly: Dependency(typeof(HelperFile))]
 namespace XyTodo.UWP.Helpers
 {
-    public class FileHelper : IFileHelper
+    public class HelperFile : IHelperFile
     {
         public string GetLocalFilePath(string filename)
         {

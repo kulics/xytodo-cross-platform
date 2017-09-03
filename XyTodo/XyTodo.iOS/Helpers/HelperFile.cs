@@ -4,10 +4,10 @@ using System.IO;
 using XyTodo.iOS.Helpers;
 using XyTodo.Helpers;
 
-[assembly: Dependency(typeof(FileHelper))]
+[assembly: Dependency(typeof(HelperFile))]
 namespace XyTodo.iOS.Helpers
 {
-    public class FileHelper : IFileHelper
+    public class HelperFile : IHelperFile
     {
         public string GetLocalFilePath(string filename)
         {

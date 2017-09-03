@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -31,6 +27,8 @@ namespace XyTodo.Views
 
             App.Database.SaveItemAsync(new Models.ModelTask() { Content = "new"});
 
+            App.UserPreferences.PutString("test", "111");
+            var a = App.UserPreferences.GetString("test");
         }
 
         async void Handle_ItemTapped(object sender, SelectedItemChangedEventArgs e)

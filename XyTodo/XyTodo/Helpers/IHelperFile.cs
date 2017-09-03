@@ -1,6 +1,6 @@
 ﻿namespace XyTodo.Helpers
 {
-    public interface IFileHelper
+    public interface IHelperFile
     {
         string GetLocalFilePath(string filename);
     }

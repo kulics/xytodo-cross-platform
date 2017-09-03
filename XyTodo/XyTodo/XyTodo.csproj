@@ -38,8 +38,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Databases\DBHelper.cs" />
     <Compile Include="Databases\DBManager.cs" />
-    <Compile Include="Helpers\IFileHelper.cs" />
+    <Compile Include="Helpers\IHelperFile.cs" />
+    <Compile Include="Helpers\IHelperUserPreferences.cs" />
     <Compile Include="Helpers\MessengingCenterAlert.cs" />
     <Compile Include="Helpers\ObservableObject.cs" />
     <Compile Include="Helpers\ObservableRangeCollection.cs" />
