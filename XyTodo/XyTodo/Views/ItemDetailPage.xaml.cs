@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace XyTodo.Views
 {
-	public partial class ItemDetailPage : ContentPage
-	{
-		ItemDetailViewModel viewModel;
+    public partial class ItemDetailPage : ContentPage
+    {
+        ItemDetailViewModel viewModel;
 
         // Note - The Xamarin.Forms Previewer requires a default, parameterless constructor to render a page.
         public ItemDetailPage()
@@ -16,10 +16,10 @@ namespace XyTodo.Views
         }
 
         public ItemDetailPage(ItemDetailViewModel viewModel)
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
 
-			BindingContext = this.viewModel = viewModel;
-		}
-	}
+            BindingContext = this.viewModel = viewModel;
+        }
+    }
 }

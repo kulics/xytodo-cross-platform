@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="62883333-7582-458b-a2bc-4be0ad6341e4"
+    Name="77957da4-42c2-4a61-8382-b2167781b957"
     Publisher="CN=kulic"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="62883333-7582-458b-a2bc-4be0ad6341e4" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="77957da4-42c2-4a61-8382-b2167781b957" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>XyTodo.UWP</DisplayName>
