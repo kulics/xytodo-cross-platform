@@ -34,7 +34,7 @@ namespace XyTodo
             {
                 if (database == null)
                 {
-                    database = new DBManager(DependencyService.Get<IHelperFile>().GetLocalFilePath("SQLite.db3"));
+                    database = new DBManager(DependencyService.Get<IHelperFile>().GetLocalFilePath(DBHelper.DATABASE_NAME));
                 }
                 return database;
             }

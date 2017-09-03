@@ -25,10 +25,6 @@ namespace XyTodo.Views
             //绑定内容
             BindingContext = this;
 
-            App.Database.SaveItemAsync(new Models.ModelTask() { Content = "new"});
-
-            App.UserPreferences.PutString("test", "111");
-            var a = App.UserPreferences.GetString("test");
         }
 
         async void Handle_ItemTapped(object sender, SelectedItemChangedEventArgs e)
@@ -41,6 +37,13 @@ namespace XyTodo.Views
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
+        }
+
+        private void BtnAdd_Clicked( object sender, System.EventArgs e )
+        {
+            var modelNew = new Models.ModelTask() { Content = "new" };
+            App.Database.SaveItemAsync( modelNew );
+            Items.Add( new ViewModelTask() { ID = modelNew.ID, Content = modelNew.Content } );
         }
     }
 }

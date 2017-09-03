@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using XyTodo.Models;
 
 namespace XyTodo.Databases
 {
@@ -7,28 +8,27 @@ namespace XyTodo.Databases
     {
         readonly SQLiteAsyncConnection connection;
         //数据库文件名称
-        //private static string DATABASE_NAME = "SQLite.db3";
+        public const string DATABASE_NAME = "SQLite.db3";
         //数据库版本号
-        private static int DATABASE_VERSION = 5;
+        public const int DATABASE_VERSION = 1;
 
         //构造函数，在这里检查数据库情况并检查
         public DBHelper(string dbPath)
         {
             connection = new SQLiteAsyncConnection(dbPath);
-            //database.CreateTableAsync<ModelTask>().Wait();
 
             var value = DATABASE_VERSION;
             //判断是否存在
-            if (App.UserPreferences.GetInt("db_version") == 0)
+            if (App.UserPreferences.GetInt("db_version") != 0)
             {
                 //有则读取
                 value = App.UserPreferences.GetInt("db_version");
-                //OnUpgrade(value, DATABASE_VERSION);
+                OnUpgrade(value, DATABASE_VERSION);
             }
             else
             {
                 //没有则创建
-                //OnCreate();
+                OnCreate();
                 App.UserPreferences.PutInt("db_version", DATABASE_VERSION);
             }
         }
@@ -46,6 +46,8 @@ namespace XyTodo.Databases
         //创建数据库
         private void OnCreate()
         {
+            connection.CreateTableAsync<ModelTask>().Wait();
+            connection.CreateTableAsync<ModelTaskSub>().Wait();
         }
         //更新数据库
         private void OnUpgrade(int oldVersion, int newVersion)
