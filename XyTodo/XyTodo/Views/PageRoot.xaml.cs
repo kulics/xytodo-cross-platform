@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XyTodo.Localizations;
 
 namespace XyTodo.Views
 {
@@ -17,7 +18,7 @@ namespace XyTodo.Views
 
             //初始化各个页面
             pHome = new PageTaskList();
-            pHome.Title = "Home";
+            pHome.Title = Localization.Home;
             //将当前页设置为主页
             Detail = new NavigationPage( pHome );
         }

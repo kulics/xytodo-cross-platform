@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XyTodo.Localization;
+using XyTodo.Localizations;
 
 namespace XyTodo.Views
 {
@@ -12,6 +12,7 @@ namespace XyTodo.Views
     public partial class PageRootMaster : ContentPage
     {
         public ListView ListView;
+        public string AppName;
 
         public PageRootMaster()
         {
@@ -19,6 +20,8 @@ namespace XyTodo.Views
 
             BindingContext = new PageRootMasterViewModel();
             ListView = MenuItemsListView;
+            MenuLabel.Text = Localization.AppName;
+            Title = Localization.Menu;
         }
 
         class PageRootMasterViewModel : INotifyPropertyChanged
@@ -29,10 +32,10 @@ namespace XyTodo.Views
             {
                 MenuItems = new ObservableCollection<PageRootMenuItem>( new[]
                 {
-                    new PageRootMenuItem { Id = 0, Title = AppResources.home, TargetType = typeof(PageTaskList) },
-                    new PageRootMenuItem { Id = 1, Title = "About", TargetType = typeof(PageAbout) },
-                    new PageRootMenuItem { Id = 2, Title = "Guide", TargetType = typeof(PageGuide) },
-                    new PageRootMenuItem { Id = 3, Title = "Contact Us", TargetType = typeof(PageContactUs) },
+                    new PageRootMenuItem { Id = 0, Title = Localization.Home, TargetType = typeof(PageTaskList) },
+                    new PageRootMenuItem { Id = 1, Title = Localization.About, TargetType = typeof(PageAbout) },
+                    new PageRootMenuItem { Id = 2, Title = Localization.Guide, TargetType = typeof(PageGuide) },
+                    new PageRootMenuItem { Id = 3, Title = Localization.ContactUs, TargetType = typeof(PageContactUs) },
                 } );
             }
 

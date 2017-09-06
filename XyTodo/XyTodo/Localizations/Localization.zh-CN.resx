@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="home" xml:space="preserve">
+  <data name="About" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>XyTodo</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>联系我们</value>
+  </data>
+  <data name="Guide" xml:space="preserve">
+    <value>指南</value>
+  </data>
+  <data name="Home" xml:space="preserve">
     <value>主页</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>菜单</value>
   </data>
 </root>

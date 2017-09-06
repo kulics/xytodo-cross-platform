@@ -4,7 +4,7 @@
              x:Class="XyTodo.Views.PageTaskList">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="BtnAdd_Clicked"/>
+        <ToolbarItem x:Name="BtnAdd" Clicked="BtnAdd_Clicked"/>
     </ContentPage.ToolbarItems>
     
     <ListView x:Name="lv" ItemsSource="{Binding Items}"
@@ -14,7 +14,7 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout>
+                    <StackLayout Padding="12">
                         <Label Text="{Binding Content}" />
                     </StackLayout>
                 </ViewCell>

@@ -104,6 +104,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HelperFile.cs" />
+    <Compile Include="Helpers\HelperPopup.cs" />
     <Compile Include="Helpers\HelperUserPreferences.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

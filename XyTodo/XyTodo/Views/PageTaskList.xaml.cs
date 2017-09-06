@@ -2,6 +2,8 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XyTodo.Helpers;
+using XyTodo.Localizations;
 using XyTodo.ViewModels;
 
 namespace XyTodo.Views
@@ -25,7 +27,7 @@ namespace XyTodo.Views
             }
             //绑定内容
             BindingContext = this;
-
+            BtnAdd.Text = Localization.Add;
         }
 
         async void Handle_ItemTapped( object sender, SelectedItemChangedEventArgs e )
@@ -42,9 +44,13 @@ namespace XyTodo.Views
 
         private void BtnAdd_Clicked( object sender, System.EventArgs e )
         {
-            var modelNew = new Models.ModelTask() { Content = "new" };
-            App.Database.SaveItemAsync( modelNew );
-            Items.Add( new ViewModelTask() { ID = modelNew.ID, Content = modelNew.Content } );
+            //使用不同平台的输入弹窗，并获得输入结果
+            DependencyService.Get<IHelperPopup>().DialogTextInput("input","content","ok","cancel", async (string content) => 
+            {
+                var modelNew = new Models.ModelTask() { Content = content };
+                await App.Database.SaveItemAsync(modelNew);
+                Items.Add(new ViewModelTask() { ID = modelNew.ID, Content = modelNew.Content });
+            });
         }
     }
 }

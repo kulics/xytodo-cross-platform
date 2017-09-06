@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace XyTodo.Localization {
+namespace XyTodo.Localizations {
     using System;
     using System.Reflection;
     
@@ -23,24 +23,24 @@ namespace XyTodo.Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class AppResources {
+    internal class Localization {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AppResources() {
+        internal Localization() {
         }
         
         /// <summary>
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("XyTodo.Localization.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("XyTodo.Localizations.Localization", typeof(Localization).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -52,7 +52,7 @@ namespace XyTodo.Localization {
         ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,11 +62,65 @@ namespace XyTodo.Localization {
         }
         
         /// <summary>
+        ///   查找类似 About 的本地化字符串。
+        /// </summary>
+        internal static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Add 的本地化字符串。
+        /// </summary>
+        internal static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 XyTodo 的本地化字符串。
+        /// </summary>
+        internal static string AppName {
+            get {
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Contact Us 的本地化字符串。
+        /// </summary>
+        internal static string ContactUs {
+            get {
+                return ResourceManager.GetString("ContactUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Guide 的本地化字符串。
+        /// </summary>
+        internal static string Guide {
+            get {
+                return ResourceManager.GetString("Guide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Home 的本地化字符串。
         /// </summary>
-        public static string home {
+        internal static string Home {
             get {
-                return ResourceManager.GetString("home", resourceCulture);
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Menu 的本地化字符串。
+        /// </summary>
+        internal static string Menu {
+            get {
+                return ResourceManager.GetString("Menu", resourceCulture);
             }
         }
     }
