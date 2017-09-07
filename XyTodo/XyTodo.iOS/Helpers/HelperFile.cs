@@ -21,5 +21,9 @@ namespace XyTodo.iOS.Helpers
 
             return Path.Combine( libFolder, filename );
         }
+        public string GetLocalImagePath(string imgname)
+        {
+            return imgname;
+        }
     }
 }

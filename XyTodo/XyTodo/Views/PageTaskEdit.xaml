@@ -1,19 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:img="clr-namespace:XyTodo.Helpers"
              x:Class="XyTodo.Views.PageTaskEdit">
-  <ListView ItemsSource="{Binding Items}"
+    <!--<Image x:Name="img" Margin="8" Source="{img:ImageResource XyTodo.ic_add_white_24dp.png}" WidthRequest="200" HeightRequest="200" BackgroundColor="Black"/>-->
+    <!--<ListView ItemsSource="{Binding Items}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
             
-    <!--Built in Cells-->
+    --><!--Built in Cells--><!--
     <ListView.ItemTemplate>
       <DataTemplate>
         <TextCell />
       </DataTemplate>
     </ListView.ItemTemplate>
     
-    <!--Custom View Cells-->
+    --><!--Custom View Cells-->
     <!--
     <ListView.ItemTemplate>
       <DataTemplate>
@@ -27,6 +29,6 @@
         </ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>
-    -->
-  </ListView>
+    --><!--
+  </ListView>-->
 </ContentPage>

@@ -40,6 +40,7 @@
     </Compile>
     <Compile Include="Databases\DBHelper.cs" />
     <Compile Include="Databases\DBManager.cs" />
+    <Compile Include="Helpers\HelperResource.cs" />
     <Compile Include="Helpers\IHelperFile.cs" />
     <Compile Include="Helpers\IHelperPopup.cs" />
     <Compile Include="Helpers\IHelperUserPreferences.cs" />

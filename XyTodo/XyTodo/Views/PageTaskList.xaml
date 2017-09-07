@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:img="clr-namespace:XyTodo.Helpers"
              x:Class="XyTodo.Views.PageTaskList">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="BtnAdd" Clicked="BtnAdd_Clicked"/>
+        <ToolbarItem x:Name="BtnAdd" Icon="{img:ImageResource XyTodo.ic_add_white_24dp.png}" Clicked="BtnAdd_Clicked"/>
     </ContentPage.ToolbarItems>
     
     <ListView x:Name="lv" ItemsSource="{Binding Items}"

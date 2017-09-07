@@ -4,15 +4,19 @@ using System;
 using XyTodo.Droid.Helpers;
 using XyTodo.Helpers;
 
-[assembly: Dependency( typeof( HelperFile ) )]
+[assembly: Dependency(typeof(HelperFile))]
 namespace XyTodo.Droid.Helpers
 {
     public class HelperFile : IHelperFile
     {
-        public string GetLocalFilePath( string filename )
+        public string GetLocalFilePath(string filename)
         {
-            string path = Environment.GetFolderPath( Environment.SpecialFolder.Personal );
-            return Path.Combine( path, filename );
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            return Path.Combine(path, filename);
+        }
+        public string GetLocalImagePath(string imgname)
+        {
+            return imgname;
         }
     }
 }

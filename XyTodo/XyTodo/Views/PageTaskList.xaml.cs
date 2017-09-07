@@ -28,6 +28,7 @@ namespace XyTodo.Views
             //绑定内容
             BindingContext = this;
             BtnAdd.Text = Localization.Add;
+            BtnAdd.Icon = new FileImageSource { File = DependencyService.Get<IHelperFile>().GetLocalImagePath("ic_add_white_24dp.png") };
         }
 
         async void Handle_ItemTapped( object sender, SelectedItemChangedEventArgs e )

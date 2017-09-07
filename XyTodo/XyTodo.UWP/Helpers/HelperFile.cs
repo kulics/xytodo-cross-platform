@@ -4,14 +4,18 @@ using Xamarin.Forms;
 using XyTodo.Helpers;
 using XyTodo.UWP.Helpers;
 
-[assembly: Dependency( typeof( HelperFile ) )]
+[assembly: Dependency(typeof(HelperFile))]
 namespace XyTodo.UWP.Helpers
 {
     public class HelperFile : IHelperFile
     {
-        public string GetLocalFilePath( string filename )
+        public string GetLocalFilePath(string filename)
         {
-            return Path.Combine( ApplicationData.Current.LocalFolder.Path, filename );
+            return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
+        }
+        public string GetLocalImagePath(string imgname)
+        {
+            return "Images/" + imgname;
         }
     }
 }
