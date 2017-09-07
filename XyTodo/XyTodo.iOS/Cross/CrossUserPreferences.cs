@@ -1,12 +1,12 @@
 ﻿using Foundation;
 using Xamarin.Forms;
-using XyTodo.Helpers;
-using XyTodo.iOS.Helpers;
+using XyTodo.Cross;
+using XyTodo.iOS.Cross;
 
-[assembly: Dependency( typeof( HelperUserPreferences ) )]
-namespace XyTodo.iOS.Helpers
+[assembly: Dependency( typeof( CrossUserPreferences ) )]
+namespace XyTodo.iOS.Cross
 {
-    class HelperUserPreferences : IHelperUserPreferences
+    class CrossUserPreferences : ICrossUserPreferences
     {
         public void Clear()
         {

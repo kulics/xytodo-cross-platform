@@ -1,6 +1,6 @@
-﻿namespace XyTodo.Helpers
+﻿namespace XyTodo.Cross
 {
-    public interface IHelperUserPreferences
+    public interface ICrossUserPreferences
     {
         void PutString( string key, string value );
         string GetString( string key );

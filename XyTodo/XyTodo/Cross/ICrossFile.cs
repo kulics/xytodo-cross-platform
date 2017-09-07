@@ -1,6 +1,6 @@
-﻿namespace XyTodo.Helpers
+﻿namespace XyTodo.Cross
 {
-    public interface IHelperFile
+    public interface ICrossFile
     {
         string GetLocalFilePath( string filename );
         string GetLocalImagePath( string imgname);

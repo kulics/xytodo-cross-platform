@@ -103,9 +103,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\HelperFile.cs" />
-    <Compile Include="Helpers\HelperPopup.cs" />
-    <Compile Include="Helpers\HelperUserPreferences.cs" />
+    <Compile Include="Cross\CrossFile.cs" />
+    <Compile Include="Cross\CrossFunction.cs" />
+    <Compile Include="Cross\CrossPopup.cs" />
+    <Compile Include="Cross\CrossUserPreferences.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

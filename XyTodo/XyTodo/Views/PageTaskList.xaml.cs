@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XyTodo.Helpers;
+using XyTodo.Cross;
 using XyTodo.Localizations;
 using XyTodo.ViewModels;
 
@@ -28,7 +28,7 @@ namespace XyTodo.Views
             //绑定内容
             BindingContext = this;
             BtnAdd.Text = Localization.Add;
-            BtnAdd.Icon = new FileImageSource { File = DependencyService.Get<IHelperFile>().GetLocalImagePath("ic_add_white_24dp.png") };
+            BtnAdd.Icon = new FileImageSource { File = DependencyService.Get<ICrossFile>().GetLocalImagePath("ic_add_white_24dp.png") };
         }
 
         async void Handle_ItemTapped( object sender, SelectedItemChangedEventArgs e )
@@ -45,8 +45,9 @@ namespace XyTodo.Views
 
         private void BtnAdd_Clicked( object sender, System.EventArgs e )
         {
+            DependencyService.Get<ICrossFunction>().ShareString("hello","11111111");
             //使用不同平台的输入弹窗，并获得输入结果
-            DependencyService.Get<IHelperPopup>().DialogTextInput("input","content","ok","cancel", async (string content) => 
+            DependencyService.Get<ICrossPopup>().DialogTextInput("input","content","ok","cancel", async (string content) => 
             {
                 var modelNew = new Models.ModelTask() { Content = content };
                 await App.Database.SaveItemAsync(modelNew);

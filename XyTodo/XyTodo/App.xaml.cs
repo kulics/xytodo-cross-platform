@@ -3,7 +3,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XyTodo.Databases;
-using XyTodo.Helpers;
+using XyTodo.Cross;
 
 [assembly: XamlCompilation( XamlCompilationOptions.Compile )]
 namespace XyTodo
@@ -13,7 +13,7 @@ namespace XyTodo
         //数据库
         static DBManager database;
         //用户设置
-        static IHelperUserPreferences userPreferences;
+        static ICrossUserPreferences userPreferences;
 
 
         public App()
@@ -34,19 +34,19 @@ namespace XyTodo
             {
                 if ( database == null )
                 {
-                    database = new DBManager( DependencyService.Get<IHelperFile>().GetLocalFilePath( DBHelper.DATABASE_NAME ) );
+                    database = new DBManager( DependencyService.Get<ICrossFile>().GetLocalFilePath( DBHelper.DATABASE_NAME ) );
                 }
                 return database;
             }
         }
 
-        public static IHelperUserPreferences UserPreferences
+        public static ICrossUserPreferences UserPreferences
         {
             get
             {
                 if ( userPreferences == null )
                 {
-                    userPreferences = DependencyService.Get<IHelperUserPreferences>();
+                    userPreferences = DependencyService.Get<ICrossUserPreferences>();
                 }
                 return userPreferences;
             }

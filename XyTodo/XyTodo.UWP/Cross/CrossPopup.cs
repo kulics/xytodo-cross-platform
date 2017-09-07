@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using Xamarin.Forms;
-using XyTodo.Helpers;
-using XyTodo.UWP.Helpers;
+using XyTodo.Cross;
+using XyTodo.UWP.Cross;
 
-[assembly: Dependency(typeof(HelperPopup))]
-namespace XyTodo.UWP.Helpers
+[assembly: Dependency(typeof(CrossPopup))]
+namespace XyTodo.UWP.Cross
 {
-    public class HelperPopup : IHelperPopup
+    public class CrossPopup : ICrossPopup
     {
         public async void DialogTextInput(string title, string placeholder, string ok, string cancel, Action<string> fn)
         {

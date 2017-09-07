@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XyTodo.Helpers
+namespace XyTodo.Cross
 {
     //标注扩展，用来访问PCL图片资源
     [ContentProperty("Source")]

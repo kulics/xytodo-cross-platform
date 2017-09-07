@@ -1,10 +1,8 @@
 ﻿using System;
 
-namespace XyTodo.Helpers
+namespace XyTodo.Cross
 {
-    public delegate void ClickMethod();
-
-    public interface IHelperPopup
+    public interface ICrossPopup
     {
         //带输入框弹窗
         void DialogTextInput(string title, string placeholder, string ok, string cancel, Action<string> fn);

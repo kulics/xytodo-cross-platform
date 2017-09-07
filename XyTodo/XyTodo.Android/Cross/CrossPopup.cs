@@ -2,13 +2,13 @@
 using Android.Widget;
 using System;
 using Xamarin.Forms;
-using XyTodo.Droid.Helpers;
-using XyTodo.Helpers;
+using XyTodo.Droid.Cross;
+using XyTodo.Cross;
 
-[assembly: Dependency(typeof(HelperPopup))]
-namespace XyTodo.Droid.Helpers
+[assembly: Dependency(typeof(CrossPopup))]
+namespace XyTodo.Droid.Cross
 {
-    public class HelperPopup : IHelperPopup
+    public class CrossPopup : ICrossPopup
     {
         public void DialogTextInput(string title, string placeholder, string ok, string cancel, Action<string> fn)
         {

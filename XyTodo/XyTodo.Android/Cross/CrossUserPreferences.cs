@@ -1,12 +1,12 @@
 ﻿using Android.Content;
 using Xamarin.Forms;
-using XyTodo.Droid.Helpers;
-using XyTodo.Helpers;
+using XyTodo.Droid.Cross;
+using XyTodo.Cross;
 
-[assembly: Dependency( typeof( HelperUserPreferences ) )]
-namespace XyTodo.Droid.Helpers
+[assembly: Dependency( typeof( CrossUserPreferences ) )]
+namespace XyTodo.Droid.Cross
 {
-    class HelperUserPreferences : IHelperUserPreferences
+    class CrossUserPreferences : ICrossUserPreferences
     {
         string fileName = "UserPreferences";
 

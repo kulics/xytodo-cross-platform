@@ -1,13 +1,13 @@
 ﻿using System;
 using UIKit;
 using Xamarin.Forms;
-using XyTodo.Helpers;
-using XyTodo.iOS.Helpers;
+using XyTodo.Cross;
+using XyTodo.iOS.Cross;
 
-[assembly: Dependency(typeof(HelperPopup))]
-namespace XyTodo.iOS.Helpers
+[assembly: Dependency(typeof(CrossPopup))]
+namespace XyTodo.iOS.Cross
 {
-    public class HelperPopup : IHelperPopup
+    public class CrossPopup : ICrossPopup
     {
         public void DialogTextInput(string title, string placeholder, string ok, string cancel, Action<string> fn)
         {

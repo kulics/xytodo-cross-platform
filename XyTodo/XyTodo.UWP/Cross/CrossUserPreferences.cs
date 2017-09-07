@@ -1,12 +1,12 @@
 ﻿using Windows.Storage;
 using Xamarin.Forms;
-using XyTodo.Helpers;
-using XyTodo.UWP.Helpers;
+using XyTodo.Cross;
+using XyTodo.UWP.Cross;
 
-[assembly: Dependency( typeof( HelperUserPreferences ) )]
-namespace XyTodo.UWP.Helpers
+[assembly: Dependency( typeof( CrossUserPreferences ) )]
+namespace XyTodo.UWP.Cross
 {
-    class HelperUserPreferences : IHelperUserPreferences
+    class CrossUserPreferences : ICrossUserPreferences
     {
         public void Clear()
         {

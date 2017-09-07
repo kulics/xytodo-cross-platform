@@ -1,13 +1,13 @@
 ﻿using System.IO;
 using Xamarin.Forms;
 using System;
-using XyTodo.Droid.Helpers;
-using XyTodo.Helpers;
+using XyTodo.Droid.Cross;
+using XyTodo.Cross;
 
-[assembly: Dependency(typeof(HelperFile))]
-namespace XyTodo.Droid.Helpers
+[assembly: Dependency(typeof(CrossFile))]
+namespace XyTodo.Droid.Cross
 {
-    public class HelperFile : IHelperFile
+    public class CrossFile : ICrossFile
     {
         public string GetLocalFilePath(string filename)
         {

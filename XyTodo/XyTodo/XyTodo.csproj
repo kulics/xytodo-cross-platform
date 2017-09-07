@@ -40,10 +40,11 @@
     </Compile>
     <Compile Include="Databases\DBHelper.cs" />
     <Compile Include="Databases\DBManager.cs" />
-    <Compile Include="Helpers\HelperResource.cs" />
-    <Compile Include="Helpers\IHelperFile.cs" />
-    <Compile Include="Helpers\IHelperPopup.cs" />
-    <Compile Include="Helpers\IHelperUserPreferences.cs" />
+    <Compile Include="Cross\CrossResource.cs" />
+    <Compile Include="Cross\ICrossFile.cs" />
+    <Compile Include="Cross\ICrossFunction.cs" />
+    <Compile Include="Cross\ICrossPopup.cs" />
+    <Compile Include="Cross\ICrossUserPreferences.cs" />
     <Compile Include="Localizations\Localization.ja-JP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
