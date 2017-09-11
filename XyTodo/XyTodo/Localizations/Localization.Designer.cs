@@ -98,6 +98,24 @@ namespace XyTodo.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 Content 的本地化字符串。
+        /// </summary>
+        internal static string Content {
+            get {
+                return ResourceManager.GetString("Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Delete 的本地化字符串。
+        /// </summary>
+        internal static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Guide 的本地化字符串。
         /// </summary>
         internal static string Guide {
@@ -121,6 +139,15 @@ namespace XyTodo.Localizations {
         internal static string Menu {
             get {
                 return ResourceManager.GetString("Menu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 OK 的本地化字符串。
+        /// </summary>
+        internal static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
             }
         }
     }

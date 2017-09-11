@@ -9,7 +9,7 @@
     </ContentPage.ToolbarItems>
     
     <ListView x:Name="lv" ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
+              ItemSelected="lv_ItemSelected"
             CachingStrategy="RecycleElement">
 
         <ListView.ItemTemplate>

@@ -1,34 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:img="clr-namespace:XyTodo.Cross"
+             xmlns:res="clr-namespace:XyTodo.Cross"
+             xmlns:selector="clr-namespace:XyTodo.Components"
              x:Class="XyTodo.Views.PageTaskEdit">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+                  
+            <DataTemplate x:Key="templateHead">
+                <ViewCell>
+                    <StackLayout Padding="12" Orientation="Horizontal">
+                        <Switch />
+                        <StackLayout>
+                            <Entry Placeholder="{Binding ResPlaceholder}" Text="{Binding Content}"/>
+                            <Label Text="Time"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="templateTime">
+                <ViewCell>
+                    <StackLayout Padding="12" Orientation="Horizontal">
+                        <Label Text="Target"/>
+                        <Label Text="{Binding Content}"/>
+                        <Button Text="More"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="templateNote">
+                <ViewCell>
+                    <StackLayout Padding="12">
+                        <Label Text="{Binding Content}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="templateSub">
+                <ViewCell>
+                    <StackLayout Padding="12" Orientation="Horizontal">
+                        <Switch />
+                        <Entry Placeholder="{Binding ResPlaceholder}"/>
+                        <Button Text="{Binding ResButton}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <selector:DataTemplateSelectorTaskEdit x:Key="DTSTaskEdit"
+                                                   TemplateHead="{StaticResource templateHead}"
+                                                   TemplateTime="{StaticResource templateTime}"
+                                                   TemplateNote="{StaticResource templateNote}"
+                                                   TemplateSub="{StaticResource templateSub}"/>
+                
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="BtnOK" Clicked="BtnOK_Clicked"/>
+    </ContentPage.ToolbarItems>
     <!--<Image x:Name="img" Margin="8" Source="{img:ImageResource XyTodo.ic_add_white_24dp.png}" WidthRequest="200" HeightRequest="200" BackgroundColor="Black"/>-->
-    <!--<ListView ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
-            CachingStrategy="RecycleElement">
-            
-    --><!--Built in Cells--><!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <TextCell />
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    
-    --><!--Custom View Cells-->
-    <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    --><!--
-  </ListView>-->
+    <ListView x:Name="listview" ItemsSource="{Binding Items}"
+              ItemTemplate="{StaticResource DTSTaskEdit}" 
+              HasUnevenRows="True" 
+              SeparatorVisibility="None"
+              ItemSelected="ListView_ItemSelected">
+
+    </ListView>
 </ContentPage>

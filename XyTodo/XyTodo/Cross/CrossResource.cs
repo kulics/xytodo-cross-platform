@@ -16,4 +16,5 @@ namespace XyTodo.Cross
             return ImageSource.FromResource(Source);
         }
     }
+
 }

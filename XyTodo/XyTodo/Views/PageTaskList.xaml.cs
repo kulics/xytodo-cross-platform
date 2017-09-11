@@ -31,21 +31,9 @@ namespace XyTodo.Views
             BtnAdd.Icon = new FileImageSource { File = DependencyService.Get<ICrossFile>().GetLocalImagePath("ic_add_white_24dp.png") };
         }
 
-        async void Handle_ItemTapped( object sender, SelectedItemChangedEventArgs e )
-        {
-            if ( e.SelectedItem == null ) { return; }
-
-            //弹出框
-            //await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-            await Navigation.PushAsync( new PageTaskEdit() );
-
-            //Deselect Item
-            ( (ListView) sender ).SelectedItem = null;
-        }
-
         private void BtnAdd_Clicked( object sender, System.EventArgs e )
         {
-            DependencyService.Get<ICrossFunction>().ShareString("hello","11111111");
+            //DependencyService.Get<ICrossFunction>().ShareString("hello","11111111");
             //使用不同平台的输入弹窗，并获得输入结果
             DependencyService.Get<ICrossPopup>().DialogTextInput("input","content","ok","cancel", async (string content) => 
             {
@@ -53,6 +41,18 @@ namespace XyTodo.Views
                 await App.Database.SaveItemAsync(modelNew);
                 Items.Add(new ViewModelTask() { ID = modelNew.ID, Content = modelNew.Content });
             });
+        }
+
+        async void lv_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null) { return; }
+            var item = e.SelectedItem as ViewModelTask;
+            //弹出框
+            //await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            await Navigation.PushAsync(new PageTaskEdit(item.ID));
+
+            //Deselect Item
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }

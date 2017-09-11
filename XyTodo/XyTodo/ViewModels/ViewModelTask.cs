@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using XyTodo.Models;
 
 namespace XyTodo.ViewModels
 {
@@ -18,5 +19,20 @@ namespace XyTodo.ViewModels
         public int Sub { get; set; }
 
         public ViewModelTask() { }
+
+        public ViewModelTask FromModel(ModelTask model)
+        {
+            ID = model.ID;
+            Content = model.Content;
+            Note = model.Note;
+            Color = model.Color;
+            TimeCreate = model.TimeCreate;
+            TimeTarget = model.TimeTarget;
+            TimeDone = model.TimeDone;
+            TimeSort = model.TimeSort;
+            Status = model.Status;
+
+            return this;
+        }
     }
 }

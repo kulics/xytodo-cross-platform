@@ -129,6 +129,12 @@
   <data name="ContactUs" xml:space="preserve">
     <value>联系我们</value>
   </data>
+  <data name="Content" xml:space="preserve">
+    <value>内容</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
   <data name="Guide" xml:space="preserve">
     <value>指南</value>
   </data>
@@ -137,5 +143,8 @@
   </data>
   <data name="Menu" xml:space="preserve">
     <value>菜单</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>确认</value>
   </data>
 </root>
