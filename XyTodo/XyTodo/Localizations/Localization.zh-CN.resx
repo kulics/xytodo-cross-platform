@@ -147,4 +147,13 @@
   <data name="OK" xml:space="preserve">
     <value>确认</value>
   </data>
+  <data name="Yesterday" xml:space="preserve">
+    <value>昨天</value>
+  </data>
+  <data name="Tomorrow" xml:space="preserve">
+    <value>明天</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>今天</value>
+  </data>
 </root>
