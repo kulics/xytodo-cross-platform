@@ -54,5 +54,11 @@ namespace XyTodo.Views
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
         }
+
+        private void MenuItem_Clicked(object sender, System.EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            DisplayAlert("More Context Action", mi.CommandParameter + " more context action", "OK");
+        }
     }
 }

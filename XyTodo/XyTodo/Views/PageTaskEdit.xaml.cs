@@ -68,6 +68,8 @@ namespace XyTodo.Views
 
         private async void BtnOK_Clicked(object sender, EventArgs e)
         {
+            var action = await DisplayActionSheet("ActionSheet: Send to?", "Cancel", null, "Email", "Twitter", "Facebook");
+            Debug.WriteLine("Action: " + action);
         }
 
         private async void NetEvent()

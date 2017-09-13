@@ -7,7 +7,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="BtnAdd" Icon="{img:ImageResource XyTodo.ic_add_white_24dp.png}" Clicked="BtnAdd_Clicked"/>
     </ContentPage.ToolbarItems>
-    
+
     <ListView x:Name="lv" ItemsSource="{Binding Items}"
               ItemSelected="lv_ItemSelected"
             CachingStrategy="RecycleElement">
@@ -15,6 +15,10 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Clicked="MenuItem_Clicked" CommandParameter="{Binding .}"
+               Text="More" />
+                    </ViewCell.ContextActions>
                     <StackLayout Padding="12">
                         <Label Text="{Binding Content}" />
                     </StackLayout>
