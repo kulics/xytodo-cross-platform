@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-
+using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XyTodo.Localizations;
 using XyTodo.Models;
 using XyTodo.ViewModels;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Json;
 
 namespace XyTodo.Views
 {
@@ -63,8 +66,41 @@ namespace XyTodo.Views
             ((ListView)sender).SelectedItem = null;
         }
 
-        private void BtnOK_Clicked(object sender, EventArgs e)
+        private async void BtnOK_Clicked(object sender, EventArgs e)
         {
+        }
+
+        private async void NetEvent()
+        {
+            //创建参数
+            var pdata = new JsonObject
+            {
+                { "account", "test@test.com" },
+                { "password", "12345678" }
+            };
+
+            //创建url
+            string uri = "https://test.test/";
+
+            //装载参数
+            var dic = new Dictionary<string, string>();
+            dic.Add("params", pdata.ToString());
+
+            //创建请求
+            var content = new FormUrlEncodedContent(dic);
+            try
+            {
+                var httpClient = new HttpClient();
+                var response = await httpClient.PostAsync(uri, content);
+                //读取返回结果
+                var k = await response.Content.ReadAsStringAsync();
+                //解析数据
+                var result = JsonObject.Parse(k);
+            }
+            catch(Exception err)
+            {
+                Debug.WriteLineIf(true, err.ToString());
+            }
         }
     }
 }
