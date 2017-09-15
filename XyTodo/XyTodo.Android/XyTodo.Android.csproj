@@ -110,6 +110,7 @@
     <Compile Include="Cross\CrossFile.cs" />
     <Compile Include="Cross\CrossFunction.cs" />
     <Compile Include="Cross\CrossPopup.cs" />
+    <Compile Include="Cross\CrossTheme.cs" />
     <Compile Include="Cross\CrossUserPreferences.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

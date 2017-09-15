@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XyTodo.Cross;
 using XyTodo.Localizations;
 
 namespace XyTodo.Views
@@ -15,6 +16,8 @@ namespace XyTodo.Views
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            //设置主题
+            DependencyService.Get<ICrossTheme>().SetTheme("black");
 
             //初始化各个页面
             pHome = new PageTaskList();

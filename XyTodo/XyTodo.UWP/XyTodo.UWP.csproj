@@ -106,6 +106,7 @@
     <Compile Include="Cross\CrossFile.cs" />
     <Compile Include="Cross\CrossFunction.cs" />
     <Compile Include="Cross\CrossPopup.cs" />
+    <Compile Include="Cross\CrossTheme.cs" />
     <Compile Include="Cross\CrossUserPreferences.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -136,6 +137,9 @@
   <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs, Version=14.0">
       <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsMobile, Version=10.0.15063.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup>

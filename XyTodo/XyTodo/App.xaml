@@ -10,9 +10,47 @@
             <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
             <Color x:Key="LightTextColor">#999999</Color>
 
+            <Color x:Key="Blue500">#2196f3</Color>
+            <Color x:Key="Purple500">#9c27b0</Color>
+            <Color x:Key="Green500">#4caf50</Color>
+            <Color x:Key="Yellow500">#FF9800</Color>
+            <Color x:Key="Red500">#f44336</Color>
+            <Color x:Key="Cyan500">#00bcd4</Color>
+            <Color x:Key="Gray500">#9e9e9e</Color>
+            <Color x:Key="Pink500">#FF4081</Color>
+            <Color x:Key="BlueGray500">#607d8b</Color>
+            <Color x:Key="Black500">#424242</Color>
+
+            <Color x:Key="Blue300">#64b5f6</Color>
+            <Color x:Key="Purple300">#ba68c8</Color>
+            <Color x:Key="Green300">#81c784</Color>
+            <Color x:Key="Yellow300">#FFB74D</Color>
+            <Color x:Key="Red300">#e57373</Color>
+            <Color x:Key="Cyan300">#4DD0E1</Color>
+            <Color x:Key="Gray300">#e0e0e0</Color>
+            <Color x:Key="Pink300">#F8BBD0</Color>
+            <Color x:Key="BlueGray300">#90A4AE</Color>
+            <Color x:Key="Black300">#616161</Color>
+
+            <Color x:Key="Blue700">#1976d2</Color>
+            <Color x:Key="Purple700">#7b1fa2</Color>
+            <Color x:Key="Green700">#388e3c</Color>
+            <Color x:Key="Yellow700">#F57C00</Color>
+            <Color x:Key="Red700">#d32f2f</Color>
+            <Color x:Key="Cyan700">#0097a7</Color>
+            <Color x:Key="Gray700">#616161</Color>
+            <Color x:Key="Pink700">#EC407A</Color>
+            <Color x:Key="BlueGray700">#455a64</Color>
+            <Color x:Key="Black700">#212121</Color>
+
+
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Black500}" />
                 <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <Style TargetType="VisualElement">
+                <Setter Property="BackgroundColor" Value="{StaticResource Black500}" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
