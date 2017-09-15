@@ -10,6 +10,7 @@
 
     <ListView x:Name="lv" ItemsSource="{Binding Items}"
               ItemSelected="lv_ItemSelected"
+               SeparatorVisibility="None"
             CachingStrategy="RecycleElement">
 
         <ListView.ItemTemplate>

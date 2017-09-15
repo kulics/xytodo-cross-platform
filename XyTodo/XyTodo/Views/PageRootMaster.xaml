@@ -6,6 +6,7 @@
     <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="None"
               HasUnevenRows="true"
+              BackgroundColor="{StaticResource Gray300}"
               ItemsSource="{Binding MenuItems}">
       <ListView.Header>
         <Grid BackgroundColor="{StaticResource Primary}">
