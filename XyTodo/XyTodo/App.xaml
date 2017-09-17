@@ -49,9 +49,6 @@
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
 
-            <Style TargetType="VisualElement">
-                <Setter Property="BackgroundColor" Value="{StaticResource Black500}" />
-            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
